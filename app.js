@@ -67,7 +67,8 @@ app.get("/todos/", async (request, response) => {
   //     }
   //   }
   const getQuery = `
-        SELECT * FROM todo
+        SELECT 
+        id, todo, priority, status, category, due_date as dueDate FROM todo
         WHERE todo LIKE '%${search_q}%' OR 
         priority = '${priority}' OR 
         status = '${status}' OR 
